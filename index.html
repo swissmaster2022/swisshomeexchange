@@ -1,4 +1,4 @@
-oom<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -108,11 +108,32 @@ oom<!DOCTYPE html>
 
   <h2>Contact Us:</h2>
   <p>If you’re interested or have any questions, feel free to reach out! We’re happy to provide more information about our home, the area, and the exchange logistics.</p>
+
+  <!-- Calendar -->
+  <h2>Check Your Dates</h2>
+  <label for="calendar">Select a date:</label>
+  <input type="date" id="calendar" name="calendar">
+
+  <!-- Visitor Counter -->
+  <h2>Visitor Counter</h2>
+  <p>Visitors: <span id="visitCount">0</span></p>
+
 </div>
 
 <footer>
   <p>&copy; 2024 Swiss Home Exchange. All Rights Reserved.</p>
 </footer>
 
+<script>
+  // Visitor Counter using localStorage
+  if (localStorage.pageCount) {
+      localStorage.pageCount = Number(localStorage.pageCount) + 1;
+  } else {
+      localStorage.pageCount = 1;
+  }
+  document.getElementById("visitCount").innerHTML = localStorage.pageCount;
+</script>
+
 </body>
 </html>
+
